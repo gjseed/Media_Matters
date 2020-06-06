@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Media_Matters.Models.Book>
+@inject Media_Matters.Models.IBookRepository BookRepository;
+@{
+    ViewData["Title"] = "Books Page";
+}
+
+<div class="text-center">
+    <h1>@ViewData["Title"]</h1>
+    <p class="text-lg-center">@DateTime.Now</p>
+    <p class="text-lg-center">It is very difficult to choose my favorite five books. I have so many more.</p>
+    @foreach (Media_Matters.Models.Book b in Model)
+    {
+        <div></div>
+        <div>@b.BookTitle @b.BookISBN @b.AuthorFname @b.AuthorFname @b.AuthorLname @b.BookEdition @b.PublishDate @b.BookNotes <img src="~/lib/images/" />@b.CoverImg </div>
+    }
+</div>

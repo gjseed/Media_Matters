@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Media_Matters.Models.Album>
+@inject Media_Matters.Models.IAlbumRepository AlbumRepository;
+@{
+    ViewData["Title"] = "Albums Page";
+}
+<div class="text-center">
+    <h1>@ViewData["Title"]</h1>
+    @foreach (Media_Matters.Models.Album a in Model)
+    {
+<div>@a.AlbumTitle @a.AlbumArtist @a.Notes <img src="~lib/images/" />@a.AlbumCover</div>
+    }
+</div>

@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Media_Matters.Models.Game>
+@inject Media_Matters.Models.IGameRepository GameRepository;
+
+@{ViewData["Title"] = "Game Page"; }
+
+    <div class="text-center">
+        <h1>@ViewData["Title"]</h1>
+        @foreach (Media_Matters.Models.Game g in Model)
+        {
+            <div>@g.GameId @g.GameTitle @g.Notes <img src="~/lib/images/" />@g.GameCover</div>
+        }
+    </div>
